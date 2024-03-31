@@ -50,3 +50,4 @@ Para simplificar o ambiente de desenvolvimento local, você pode usar o Docker C
 
 ## Diagrama
 ![Diagrama](localstack/Diagrama validacao.drawio.png)
+![Diagrama](ValidateFileAWSLambda/blob/main/localstack/Diagrama%20validacao.drawio.png
