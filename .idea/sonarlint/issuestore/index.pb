@@ -13,3 +13,5 @@ C
 localstack/start.sh,e/3/e375730ca642c0d0642aa83646d674ee721930c9
 H
 localstack/mock_data.csv,c/c/cce431c961d5db770aa9b8d3117cec58815b483a
+Z
+*app/src/test/java/org/example/AppTest.java,2/9/297f0403617e3b8481c4ba6ebf282c500b72eaef

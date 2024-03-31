@@ -1,0 +1,28 @@
+<mxfile host="Electron" modified="2024-03-31T23:01:43.418Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.1.0 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="JxVDtYFvj9Ni7mA3A8Si" version="24.1.0" type="device">
+  <diagram name="Página-1" id="Dr_YrXKQBqC5I9dA-5wK">
+    <mxGraphModel dx="994" dy="662" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="hB5WDYYbNiz2SBFFXYTv-6" value="AWS Cloud" style="sketch=0;outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud;strokeColor=#AAB7B8;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#AAB7B8;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="250" width="560" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="hB5WDYYbNiz2SBFFXYTv-1" value="&lt;pre style=&quot;color: rgb(248, 248, 242); font-family: &amp;quot;JetBrains Mono&amp;quot;, monospace;&quot;&gt;my-test-bucket&lt;/pre&gt;" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.s3;fillColor=#E05243;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="161.75" y="328.5" width="76.5" height="93" as="geometry" />
+        </mxCell>
+        <mxCell id="hB5WDYYbNiz2SBFFXYTv-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="hB5WDYYbNiz2SBFFXYTv-2" target="hB5WDYYbNiz2SBFFXYTv-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hB5WDYYbNiz2SBFFXYTv-2" value="&lt;div style=&quot;background-color:#282a36;color:#f8f8f2&quot;&gt;&lt;pre style=&quot;font-family:&#39;JetBrains Mono&#39;,monospace;font-size:9,8pt;&quot;&gt;validacao&lt;/pre&gt;&lt;/div&gt;" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.lambda;fillColor=#F58534;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="361.75" y="328.5" width="76.5" height="93" as="geometry" />
+        </mxCell>
+        <mxCell id="hB5WDYYbNiz2SBFFXYTv-3" value="&lt;div style=&quot;background-color:#282a36;color:#f8f8f2&quot;&gt;&lt;pre style=&quot;font-family:&#39;JetBrains Mono&#39;,monospace;font-size:9,8pt;&quot;&gt;&lt;div&gt;&lt;pre style=&quot;font-family:&#39;JetBrains Mono&#39;,monospace;font-size:9,8pt;&quot;&gt;my-test-queu&lt;/pre&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.sqs;fillColor=#D9A741;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="521.75" y="328.5" width="76.5" height="93" as="geometry" />
+        </mxCell>
+        <mxCell id="hB5WDYYbNiz2SBFFXYTv-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="hB5WDYYbNiz2SBFFXYTv-1" target="hB5WDYYbNiz2SBFFXYTv-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
