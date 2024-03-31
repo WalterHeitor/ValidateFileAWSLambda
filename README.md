@@ -49,6 +49,7 @@ O aplicativo utiliza o SLF4J para registro de eventos e erros. Certifique-se de 
 Para simplificar o ambiente de desenvolvimento local, você pode usar o Docker Compose para executar o Localstack e configurar serviços como o S3 e o SQS. Adicione um arquivo docker-compose.yml à pasta do projeto com as configurações necessárias.
 
 ## Diagrama
+
 ![Diagrama](localstack/Diagrama validacao.drawio.png)
 
-![Diagrama](https://github.com/WalterHeitor/ValidateFileAWSLambda/blob/main/localstack/Diagrama%20validacao.drawio.png)
+![Diagrama](https://github.com/WalterHeitor/ValidateFileAWSLambda/blob/5e4d2d2e4dc781ff4d7151d2ec55edc184ae6bf2/localstack/Diagrama%20validacao.drawio.png)
