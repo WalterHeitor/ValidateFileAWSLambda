@@ -15,3 +15,6 @@ H
 localstack/mock_data.csv,c/c/cce431c961d5db770aa9b8d3117cec58815b483a
 Z
 *app/src/test/java/org/example/AppTest.java,2/9/297f0403617e3b8481c4ba6ebf282c500b72eaef
+:
+
+.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
