@@ -48,11 +48,6 @@ aws --endpoint-url=http://localhost:4566 s3api put-bucket-notification-configura
 # subindo arquivo para execucao da lambda
 aws --endpoint-url=http://localhost:4566 s3  cp ./localstack/mock_data.csv s3://my-test-bucket
 
-# Executando o Lambda e verificando se foi instalado corretamente:
-aws --endpoint http://localhost:4566 --profile localstack \
-  lambda invoke \
-  --function-name validacao out.txt \
-  --log-type Tail
 
 
 DATABASE_USERNAME=postgres;DATABASE_PASSWORD=postgres;DATABASE_NAME=postgres;DATABASE_SCHEMA=public;DATABASE_PORT=5432;DATABASE_HOST=localhost;
