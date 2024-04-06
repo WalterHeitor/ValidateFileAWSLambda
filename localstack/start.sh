@@ -26,9 +26,9 @@ aws --endpoint http://localhost:4566 --profile localstack \
   --region us-east-1 lambda create-function \
   --function-name validacao \
   --runtime java17 \
-  --handler br.com.softwalter.App \
+  --handler org.example.App \
   --memory-size 128 \
-  --zip-file fileb://validate_file/app/build/libs/app.jar \
+  --zip-file fileb://app/build/libs/app.jar \
   --role arn:aws:iam::000000000000:role/lambda-execution --timeout 30000
 
 # Configuração do gatilho S3 para acionar a função Lambda
