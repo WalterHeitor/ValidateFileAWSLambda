@@ -1,5 +1,6 @@
-package br.com.softwalter.validate_file.aws.client.sqs;
+package br.com.softwalter.validate_file.adapter.sqs.client;
 
+import br.com.softwalter.validate_file.adapter.sqs.client.ClientSqs;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.client.builder.AwsClientBuilder;
@@ -16,18 +17,17 @@ public class ClientSqsImpl implements ClientSqs {
         AmazonSQS tempSqsClient = null;
         try {
             if (localhost != null) {
-//                tempSqsClient = AmazonSQSClientBuilder.defaultClient();
                 tempSqsClient = AmazonSQSClientBuilder.standard()
                         .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(
-                                "http://localhost:4566", "us-east-1")) // Endpoint LocalStack
-                        .withCredentials(new ProfileCredentialsProvider("localstack")) // Usa o perfil localstack
+                                "http://localhost:4566", "us-east-1"))
+                        .withCredentials(new ProfileCredentialsProvider("localstack"))
                         .build();
             } else {
 
                 tempSqsClient = AmazonSQSClientBuilder.standard()
                         .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(
-                                "http://localhost:4566", "us-east-1")) // Endpoint LocalStack
-                        .withCredentials(new DefaultAWSCredentialsProviderChain()) // Usa o perfil localstack
+                                "http://localhost:4566", "us-east-1"))
+                        .withCredentials(new DefaultAWSCredentialsProviderChain())
                         .build();
             }
         } catch (Exception e) {

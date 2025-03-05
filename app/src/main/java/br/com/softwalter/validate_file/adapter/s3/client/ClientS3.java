@@ -1,4 +1,4 @@
-package br.com.softwalter.validate_file.aws.client.s3;
+package br.com.softwalter.validate_file.adapter.s3.client;
 
 import com.amazonaws.services.s3.AmazonS3;
 

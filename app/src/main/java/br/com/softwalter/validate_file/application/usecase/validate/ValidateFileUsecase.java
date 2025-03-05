@@ -1,4 +1,4 @@
-package br.com.softwalter.validate_file.application.usecase;
+package br.com.softwalter.validate_file.application.usecase.validate;
 
 import com.amazonaws.services.s3.model.S3Object;
 

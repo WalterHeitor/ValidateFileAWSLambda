@@ -1,6 +1,5 @@
-package br.com.softwalter.validate_file.aws.client.s3;
+package br.com.softwalter.validate_file.adapter.s3.client;
 
-import br.com.softwalter.validate_file.aws.client.s3.ClientS3;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.client.builder.AwsClientBuilder;
@@ -9,7 +8,6 @@ import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 
 
 public class ClientS3Imp implements ClientS3 {
-
 
     static String localhost = System.getenv("LOCALHOST");
 
@@ -43,5 +41,4 @@ public class ClientS3Imp implements ClientS3 {
         s3Client = tempS3Client;
         return s3Client;
     }
-
 }

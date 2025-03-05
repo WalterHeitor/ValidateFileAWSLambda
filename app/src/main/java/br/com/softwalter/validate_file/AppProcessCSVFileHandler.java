@@ -14,9 +14,7 @@ import java.util.List;
 public class AppProcessCSVFileHandler implements RequestHandler<S3Event, Void> {
 
     private static final Logger logger = LoggerFactory.getLogger(AppProcessCSVFileHandler.class);
-
     private final ProcessCSVFileUseCase processCSVFileUseCase = new ProcessCSVFileUseCaseImpl();
-
 
     @Override
     public Void handleRequest(S3Event s3Event, Context context) {
@@ -25,7 +23,6 @@ public class AppProcessCSVFileHandler implements RequestHandler<S3Event, Void> {
             for (S3EventNotification.S3EventNotificationRecord s3record : s3Event.getRecords()) {
                 String bucketName = s3record.getS3().getBucket().getName();
                 String objectKey = s3record.getS3().getObject().getKey();
-
                 processCSVFileUseCase.execute(bucketName, objectKey);
                 logger.info("Fim do processamento!");
             }
@@ -54,5 +51,4 @@ public class AppProcessCSVFileHandler implements RequestHandler<S3Event, Void> {
 
         new AppProcessCSVFileHandler().handleRequest(s3Event, null);
     }
-
 }

@@ -1,7 +1,8 @@
-package br.com.softwalter.validate_file.aws;
+package br.com.softwalter.validate_file.adapter.s3.service;
 
-import br.com.softwalter.validate_file.aws.client.s3.ClientS3;
-import br.com.softwalter.validate_file.aws.client.s3.ClientS3Imp;
+import br.com.softwalter.validate_file.adapter.s3.client.ClientS3;
+import br.com.softwalter.validate_file.adapter.s3.client.ClientS3Imp;
+import br.com.softwalter.validate_file.domain.ports.input.S3ServicePort;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.SdkClientException;
 import com.amazonaws.services.s3.AmazonS3;
@@ -9,11 +10,10 @@ import com.amazonaws.services.s3.model.S3Object;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class S3ServiceImpl implements S3Service {
-    private static final Logger logger = LoggerFactory.getLogger(S3ServiceImpl.class);
+public class S3ServicePortImpl implements S3ServicePort {
+    private static final Logger logger = LoggerFactory.getLogger(S3ServicePortImpl.class);
     private static final ClientS3 clientS3 = new ClientS3Imp();
     private static final AmazonS3 s3Client = clientS3.getS3Client();
-
 
     @Override
     public S3Object getObjectContent(String bucketName, String objectKey) {
@@ -36,5 +36,4 @@ public class S3ServiceImpl implements S3Service {
 
         return object;
     }
-
 }

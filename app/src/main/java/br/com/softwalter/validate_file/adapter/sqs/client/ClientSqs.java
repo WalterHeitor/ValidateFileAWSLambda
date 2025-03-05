@@ -1,4 +1,4 @@
-package br.com.softwalter.validate_file.aws.client.sqs;
+package br.com.softwalter.validate_file.adapter.sqs.client;
 
 import com.amazonaws.services.sqs.AmazonSQS;
 

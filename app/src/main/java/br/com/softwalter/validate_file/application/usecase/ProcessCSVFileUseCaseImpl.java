@@ -1,11 +1,12 @@
 package br.com.softwalter.validate_file.application.usecase;
 
-import br.com.softwalter.validate_file.aws.S3Service;
-import br.com.softwalter.validate_file.aws.S3ServiceImpl;
-import br.com.softwalter.validate_file.aws.SQSService;
-import br.com.softwalter.validate_file.aws.SQSServiceImpl;
-import br.com.softwalter.validate_file.entity.Person;
+import br.com.softwalter.validate_file.adapter.s3.service.S3ServicePortImpl;
+import br.com.softwalter.validate_file.application.usecase.validate.ValidateFileUsecase;
+import br.com.softwalter.validate_file.domain.entity.Person;
+import br.com.softwalter.validate_file.domain.ports.input.S3ServicePort;
 import com.amazonaws.services.s3.model.S3Object;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,28 +17,37 @@ import java.util.List;
 
 public class ProcessCSVFileUseCaseImpl implements ProcessCSVFileUseCase {
 
-    private final S3Service s3Service = new S3ServiceImpl();
-    private final SQSService sqsService = new SQSServiceImpl();
-
+    private static final Logger logger = LoggerFactory.getLogger(ProcessCSVFileUseCaseImpl.class);
+    private final S3ServicePort s3ServicePort = new S3ServicePortImpl();
+    private final PublishToSQSUseCase publishToSQSUseCase = new PublishToSQSUseCaseImpl();
 
     @Override
     public void execute(String bucketName, String objectKey) {
 
-        S3Object objectContent = s3Service.getObjectContent(bucketName, objectKey);
-        ValidateFileUsecase.validarExtensao(objectContent);
-        InputStream objectData = objectContent.getObjectContent();
-        BufferedReader reader;
-        reader = getBufferedReader(objectData);
-        String headerLine = null;
+        logger.info("Iniciando processamento do arquivo CSV. Bucket: {}, Key: {}", bucketName, objectKey);
+
         try {
+            S3Object objectContent = s3ServicePort.getObjectContent(bucketName, objectKey);
+            logger.info("Arquivo obtido com sucesso do S3.");
+            ValidateFileUsecase.validarExtensao(objectContent);
+            logger.info("Extensão do arquivo validada.");
+            InputStream objectData = objectContent.getObjectContent();
+            BufferedReader reader;
+            reader = getBufferedReader(objectData);
+            String headerLine = null;
             headerLine = reader.readLine();
+            ValidateFileUsecase.validarCabecalho(headerLine);
+            logger.info("Cabeçalho do arquivo validado: {}", headerLine);
+            List<Person> personList = parseCSV(reader);
+            logger.info("Arquivo processado. Total de registros: {}", personList.size());
+            publishToSQSUseCase.sendToSQS(personList);
+            logger.info("Mensagens enviadas para a fila SQS.");
         } catch (IOException e) {
             throw new IllegalArgumentException(e);
+        } catch (Exception e) {
+            logger.error("Erro ao processar o arquivo CSV. Bucket: {}, Key: {}, Erro: {}", bucketName, objectKey, e.getMessage(), e);
+            throw new RuntimeException("Erro no processamento do arquivo CSV", e);
         }
-        ValidateFileUsecase.validarCabecalho(headerLine);
-        List<Person> personList = parseCSV(reader);
-
-        sqsService.sendToSQS(personList);
     }
 
     private static BufferedReader getBufferedReader(InputStream objectData) {
@@ -60,6 +70,7 @@ public class ProcessCSVFileUseCaseImpl implements ProcessCSVFileUseCase {
             try {
                 if ((line = reader.readLine()) == null) break;
             } catch (IOException e) {
+                logger.error("Erro ao ler linha do CSV: {}", e.getMessage(), e);
                 throw new IllegalArgumentException(e);
             }
             String[] parts = line.split(",");
@@ -76,5 +87,4 @@ public class ProcessCSVFileUseCaseImpl implements ProcessCSVFileUseCase {
         }
         return personList;
     }
-
 }

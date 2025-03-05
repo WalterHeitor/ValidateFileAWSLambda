@@ -1,4 +1,4 @@
-package br.com.softwalter.validate_file.entity;
+package br.com.softwalter.validate_file.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -57,6 +57,3 @@ public class Person implements Serializable {
                 '}';
     }
 }
-
-
-
