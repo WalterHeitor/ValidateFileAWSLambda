@@ -1,4 +1,4 @@
-package br.com.softwalter.validate_file.application.usecase;
+package br.com.softwalter.validate_file.application.usecase.publish;
 
 import br.com.softwalter.validate_file.domain.entity.Person;
 

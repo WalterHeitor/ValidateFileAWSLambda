@@ -1,7 +1,7 @@
-package br.com.softwalter.validate_file.adapter.sqs.service;
+package br.com.softwalter.validate_file.adapter.service;
 
-import br.com.softwalter.validate_file.adapter.sqs.client.ClientSqs;
-import br.com.softwalter.validate_file.adapter.sqs.client.ClientSqsImpl;
+import br.com.softwalter.validate_file.adapter.client.ClientSqs;
+import br.com.softwalter.validate_file.adapter.client.ClientSqsImpl;
 import br.com.softwalter.validate_file.domain.entity.Person;
 import br.com.softwalter.validate_file.domain.ports.output.SQSServicePort;
 import com.amazonaws.services.sqs.AmazonSQS;

@@ -1,6 +1,5 @@
-package br.com.softwalter.validate_file.adapter.sqs.client;
+package br.com.softwalter.validate_file.adapter.client;
 
-import br.com.softwalter.validate_file.adapter.sqs.client.ClientSqs;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.client.builder.AwsClientBuilder;

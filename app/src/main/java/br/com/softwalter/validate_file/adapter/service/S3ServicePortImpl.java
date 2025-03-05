@@ -1,7 +1,7 @@
-package br.com.softwalter.validate_file.adapter.s3.service;
+package br.com.softwalter.validate_file.adapter.service;
 
-import br.com.softwalter.validate_file.adapter.s3.client.ClientS3;
-import br.com.softwalter.validate_file.adapter.s3.client.ClientS3Imp;
+import br.com.softwalter.validate_file.adapter.client.ClientS3;
+import br.com.softwalter.validate_file.adapter.client.ClientS3Imp;
 import br.com.softwalter.validate_file.domain.ports.input.S3ServicePort;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.SdkClientException;

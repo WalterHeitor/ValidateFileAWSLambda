@@ -1,7 +1,7 @@
 package br.com.softwalter.validate_file;
 
-import br.com.softwalter.validate_file.application.usecase.ProcessCSVFileUseCase;
-import br.com.softwalter.validate_file.application.usecase.ProcessCSVFileUseCaseImpl;
+import br.com.softwalter.validate_file.application.usecase.process.ProcessCSVFileUseCase;
+import br.com.softwalter.validate_file.application.usecase.process.ProcessCSVFileUseCaseImpl;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.amazonaws.services.lambda.runtime.events.S3Event;

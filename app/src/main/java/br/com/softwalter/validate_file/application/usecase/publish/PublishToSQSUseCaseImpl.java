@@ -1,6 +1,6 @@
-package br.com.softwalter.validate_file.application.usecase;
+package br.com.softwalter.validate_file.application.usecase.publish;
 
-import br.com.softwalter.validate_file.adapter.sqs.service.SQSServicePortImpl;
+import br.com.softwalter.validate_file.adapter.service.SQSServicePortImpl;
 import br.com.softwalter.validate_file.domain.entity.Person;
 import br.com.softwalter.validate_file.domain.ports.output.SQSServicePort;
 

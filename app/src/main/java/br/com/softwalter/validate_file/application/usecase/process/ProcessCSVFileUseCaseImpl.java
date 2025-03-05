@@ -1,6 +1,8 @@
-package br.com.softwalter.validate_file.application.usecase;
+package br.com.softwalter.validate_file.application.usecase.process;
 
-import br.com.softwalter.validate_file.adapter.s3.service.S3ServicePortImpl;
+import br.com.softwalter.validate_file.adapter.service.S3ServicePortImpl;
+import br.com.softwalter.validate_file.application.usecase.publish.PublishToSQSUseCase;
+import br.com.softwalter.validate_file.application.usecase.publish.PublishToSQSUseCaseImpl;
 import br.com.softwalter.validate_file.application.usecase.validate.ValidateFileUsecase;
 import br.com.softwalter.validate_file.domain.entity.Person;
 import br.com.softwalter.validate_file.domain.ports.input.S3ServicePort;
