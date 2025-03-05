@@ -1,4 +1,4 @@
-package org.example.entity;
+package br.com.softwalter.validate_file.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

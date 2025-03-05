@@ -24,7 +24,7 @@ dependencies {
     // https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-s3
     implementation("com.amazonaws:aws-java-sdk-s3:1.12.681")
     // https://mvnrepository.com/artifact/com.amazonaws/aws-lambda-java-events
-    implementation("com.amazonaws:aws-lambda-java-events:3.11.4")
+    implementation("com.amazonaws:aws-lambda-java-events:3.14.0")
     // https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-sqs
     implementation("com.amazonaws:aws-java-sdk-sqs:1.12.681")
 
@@ -52,5 +52,15 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "org.example.App"
+    mainClass = "br.com.softwalter.validate_file.App"
+}
+
+tasks.jar {
+    manifest.attributes["Main-Class"] = "br.com.softwalter.validate_file.App"
+    val dependencies = configurations
+        .runtimeClasspath
+        .get()
+        .map (::zipTree ) // OR .map { zipTree(it) }
+    from(dependencies)
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
